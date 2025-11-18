@@ -20,7 +20,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
-      
+
       // Check if header is over the black VoiceNote section
       const voiceNoteSection = document.querySelector('.voice-note-section')
       if (voiceNoteSection) {
@@ -32,7 +32,7 @@ export default function Header() {
       // Determine which section is currently in view
       const sections = ["#story", "#work", "#writing", "#contact"]
       const scrollPosition = window.scrollY + 150 // Offset for header height
-      
+
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.querySelector(sections[i])
         if (section) {
@@ -69,50 +69,47 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isOverBlack
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isOverBlack
           ? "bg-black/90 backdrop-blur-sm"
           : scrolled
-          ? "bg-white/90 backdrop-blur-sm"
-          : "bg-transparent"
-      }`}
+            ? "bg-white/90 backdrop-blur-sm"
+            : "bg-transparent"
+        }`}
     >
-      <nav className="max-w-3xl mx-auto px-6 py-6">
+      <nav className="max-w-2xl mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollTo("#story")}
-            className={`text-[20px] font-medium transition-all ${
-              isOverBlack
+            className={`text-[20px] font-medium transition-all ${isOverBlack
                 ? "text-white hover:opacity-60"
                 : "text-black hover:opacity-60"
-            }`}
+              }`}
           >
             Anmol Rathi
           </button>
           <div className="flex items-center space-x-8">
             {navItems.map((item) => {
-              const isActive = pathname === "/list-100" 
+              const isActive = pathname === "/list-100"
                 ? item.href === "/list-100"
                 : activeSection === item.href
               const isList100 = item.label === "List 100"
-              
+
               return (
                 <button
                   key={item.href}
                   onClick={() => scrollTo(item.href)}
-                  className={`text-sm transition-all px-3 py-1.5 ${
-                    isList100
+                  className={`text-sm transition-all px-3 py-1.5 ${isList100
                       ? isOverBlack
                         ? "border-2 border-white text-white hover:bg-white/10"
                         : "border-2 border-black text-black hover:bg-black/5"
                       : isActive
-                      ? isOverBlack
-                        ? "bg-white text-black"
-                        : "bg-black text-white"
-                      : isOverBlack
-                      ? "text-white hover:opacity-60"
-                      : "text-black hover:opacity-60"
-                  }`}
+                        ? isOverBlack
+                          ? "bg-white text-black"
+                          : "bg-black text-white"
+                        : isOverBlack
+                          ? "text-white hover:opacity-60"
+                          : "text-black hover:opacity-60"
+                    }`}
                 >
                   {item.label}
                 </button>
