@@ -1,0 +1,7 @@
+# Voice Notes
+# Place your audio file here as:
+# voice-note.mp3 or voice-note.m4a
+#
+# To use it, update VoiceNote.tsx with an actual audio player
+# pointing to /audio/voice-note.mp3
+
