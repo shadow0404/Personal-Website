@@ -73,10 +73,10 @@ export default function List100() {
               >
                 https://huyenchip.com/list-100/
               </a>
-              {" "}— here's my shot at 100 things I want to do before I die.
+              {" "}— here&apos;s my shot at 100 things I want to do before I die.
             </p>
             <p>
-              I'm young and still figuring out life, so this list will keep growing 
+              I&apos;m young and still figuring out life, so this list will keep growing 
               as I discover more of what I want to experience.
             </p>
           </div>

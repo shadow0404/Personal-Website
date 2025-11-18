@@ -5,7 +5,7 @@ export default function VoiceNote() {
         <h2 className="text-4xl font-semibold mb-12">Listen</h2>
         <div className="space-y-8">
           <p className="text-lg leading-relaxed text-white/70">
-            Sometimes writing isn't enough. Here's what I'm thinking about right now.
+            Sometimes writing isn&apos;t enough. Here&apos;s what I&apos;m thinking about right now.
           </p>
           
           {/* Voice Note Player Placeholder */}
