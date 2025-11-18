@@ -3,7 +3,20 @@
 import { useState } from "react"
 import Image from "next/image"
 
-const policyWork = [
+type WorkItem = {
+  id: number
+  title: string
+  fullTitle: string
+  subtitle?: string
+  role: string
+  location: string
+  year: string
+  description: string
+  color: string
+  icon: React.ReactElement
+}
+
+const policyWork: WorkItem[] = [
   {
     id: 1,
     title: "The Foundation for Research on Equal Opportunity",
@@ -108,7 +121,7 @@ const policyWork = [
   },
 ]
 
-const startups = [
+const startups: WorkItem[] = [
   {
     id: 6,
     title: "Cancer-Ex",
@@ -132,7 +145,7 @@ const startups = [
 ]
 
 export default function Work() {
-  const [selectedWork, setSelectedWork] = useState<typeof policyWork[0] | null>(null)
+  const [selectedWork, setSelectedWork] = useState<WorkItem | null>(null)
   const [hoveredId, setHoveredId] = useState<number | null>(null)
 
   const allWork = [...policyWork, ...startups]
